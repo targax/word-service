@@ -1,0 +1,40 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+      settings:
+        trace: false
+        web-allow-others: false
+
+  datasource:
+    url: jdbc:h2:mem:tag-ms
+    driver-class-name: org.h2.Driver
+    username: user
+    password: 123
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+
+  rabbitmq:
+    host: seal.lmq.cloudamqp.com
+    port: 5672             # Use 5671 se quiser SSL
+    username: waebvucx
+    password: qWtlJy-9NgqOUuVmC8r29m4luRrwkXS_
+    virtual-host: waebvucx
+    ssl:
+      enabled: false       # true se quiser TLS/AMQP
+
+logging:
+  level:
+    org.springframework: INFO
+    com.gft.tag_ms: DEBUG
+
+server:
+  port: 8081
