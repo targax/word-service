@@ -4,8 +4,8 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 
 import java.time.Instant;
 
-public record EtiquetaExcluidaMensage(
-        Long idEtiqueta,
+public record PalavraExcluidaMensage(
+        Long idPalavra,
         Instant timestamp
 ) {
 

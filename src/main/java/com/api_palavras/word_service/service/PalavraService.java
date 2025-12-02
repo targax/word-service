@@ -1,6 +1,7 @@
 package com.api_palavras.word_service.service;
 
-import com.api_palavras.word_service.dto.EtiquetaExcluidaMensage;
+
+import com.api_palavras.word_service.dto.PalavraExcluidaMensage;
 import com.api_palavras.word_service.model.Palavra;
 import com.api_palavras.word_service.producer.IWordExcluidaProducer;
 import com.api_palavras.word_service.repository.PalavraRepository;
@@ -53,7 +54,7 @@ public class PalavraService {
         repository.delete(palavra);
 
         // 3. Monta a mensagem
-        EtiquetaExcluidaMensage mensage = new EtiquetaExcluidaMensage(palavra.getId(),
+       PalavraExcluidaMensage mensage = new PalavraExcluidaMensage(palavra.getId(),
                 LocalDateTime.now().atZone(ZoneId.of("UTC")).toInstant()
 
         );

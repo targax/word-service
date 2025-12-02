@@ -1,6 +1,6 @@
 package com.api_palavras.word_service.producer;
 
-import com.api_palavras.word_service.dto.EtiquetaExcluidaMensage;
+import com.api_palavras.word_service.dto.PalavraExcluidaMensage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
@@ -23,7 +23,7 @@ public class WordExcluidaProducerImpl   implements IWordExcluidaProducer{
 
 
     @Override
-    public void notifyEtiquetaExcluida(EtiquetaExcluidaMensage mensage) {
+    public void notifyEtiquetaExcluida(PalavraExcluidaMensage mensage) {
         log.info("Enviando mesagem de etiqueta excluida:{}",mensage);
         rabbitTemplate.convertAndSend(EXCHANGE_NAME,ROUTING_KEY,mensage);
 
